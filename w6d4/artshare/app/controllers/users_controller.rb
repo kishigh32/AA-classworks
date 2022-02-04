@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         # same 422 error even without else statement as long as it's save! and not save
         #keep else if save is without ! so that specific error message passes through
 		else
-			render json: user.error.full_messages, status:422
+			render json: user.errors.full_messages, status:422
 		end
     end
 
