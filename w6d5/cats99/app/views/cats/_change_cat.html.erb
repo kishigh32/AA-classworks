@@ -1,0 +1,29 @@
+ <label for="name">name</label>
+  <input type="text" id="name" name="cat[name]" value="<%= @cat.name %>">
+
+  <label for="color">Color:</label>
+
+  <select id="color" name="cat[color]" value="<%= @cat.color%>">
+      <option selected="true" disabled="disabled">Choose a color</option>
+      <option>black</option>
+      <option>orange</option>
+      <option>torty</option>
+      <option>white</option>
+      <option>brown</option>
+  </select>
+
+  <label for = "sex">Sex:</label>
+
+  <select id="sex" name="cat[sex]" value = "<%= @cat.sex%>">
+      <option selected="true" disabled="disabled">Choose a sex</option>
+      <option>M</option>
+      <option>F</option>
+  </select>
+
+  <label>Birthday:
+    <input type="date" name="cat[birth_date]" value="<%= @cat.birth_date%>">
+  </label>
+
+  <label>Description:
+    <input type="text" name="cat[description]" value="<%= @cat.description%>">
+  </label>
