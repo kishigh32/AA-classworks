@@ -1,0 +1,14 @@
+/* PHASE 1: Header */
+
+body {
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    background-color: white;
+}
+
+.header {
+    background-color: red;
+    color: white;
+    display: block;
+}
