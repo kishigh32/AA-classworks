@@ -1,0 +1,227 @@
+  [1m[35m (2120.0ms)[0m  [1m[35mCREATE DATABASE "reddit_clone_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1872.7ms)[0m  [1m[35mCREATE DATABASE "reddit_clone_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (44.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20220211214120)
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (31.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20220211214120_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (5.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220211214120"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (9.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (4.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-02-11 21:43:07.996605"], ["updated_at", "2022-02-11 21:43:07.996605"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(688274183373989625)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2022-02-11 15:12:34 -0800
+  [1m[35m (8.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/kiarash/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/kiarash/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/kiarash/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6.2/lib/rails/templates/rails/welcome/index.html.erb (25.7ms)
+Completed 200 OK in 90ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2022-02-11 15:12:48 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 2374ms (Views: 2355.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/users" for ::1 at 2022-02-11 16:36:09 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 127ms (Views: 75.8ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/" for ::1 at 2022-02-11 16:36:14 -0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/kiarash/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/kiarash/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6.2/lib/rails/templates/rails/welcome/index.html.erb (18.8ms)
+Completed 200 OK in 39ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/new" for ::1 at 2022-02-11 16:36:20 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.2.6.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2022-02-11 16:36:50 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 224ms (Views: 105.5ms | ActiveRecord: 59.4ms)
+
+
+Started POST "/users" for ::1 at 2022-02-11 16:36:59 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"567lLkyDVmBS0CFYBb3ZfJnlatIJ+Y5YsqjDi90Cw/QqQL6g2tzo2d5IE+GhUh3A+Mwjd9JLnX9z2stCkq4wYA==", "user"=>{"username"=>"hey", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant User::BCrypt:
+  app/models/user.rb:18:in `password='
+  app/controllers/users_controller.rb:18:in `create'
+
+Started POST "/__better_errors/d06e204cb5245404/variables" for ::1 at 2022-02-11 16:36:59 -0800
+Started GET "/users" for ::1 at 2022-02-11 16:41:24 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (22.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (50.5ms)
+Completed 200 OK in 309ms (Views: 241.9ms | ActiveRecord: 36.1ms)
+
+
+Started GET "/users/new" for ::1 at 2022-02-11 16:41:30 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 209ms (Views: 183.2ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/users" for ::1 at 2022-02-11 16:41:37 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"xFnzY5vRUolvjzh9KQlJZ2xGzLnSe5+7dZLtWLWdx4AJt6jtDY7sMOMXCsSN5o3bDW+FHAnJjJy04OWR+jE0FA==", "user"=>{"username"=>"hey", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant User::BCrypt:
+  app/models/user.rb:18:in `password='
+  app/controllers/users_controller.rb:18:in `create'
+
+Started POST "/__better_errors/d079318569fd6f9e/variables" for ::1 at 2022-02-11 16:41:38 -0800
+Started GET "/users/new" for ::1 at 2022-02-11 16:43:34 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 307ms (Views: 190.6ms | ActiveRecord: 68.3ms)
+
+
+Started POST "/users" for ::1 at 2022-02-11 16:43:39 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"KjHV3CnETD9QrguKMSRuokXlmT8/AFQ0NpjXkdwvZB7n345Sv5vyhtw2OTOVy6oeJMzQmuSyRxP36t9Yk4OXig==", "user"=>{"username"=>"hey", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant User::BCrypt:
+  app/models/user.rb:18:in `password='
+  app/controllers/users_controller.rb:18:in `create'
+
+Started POST "/__better_errors/734325c385bdd0c4/variables" for ::1 at 2022-02-11 16:43:40 -0800
+Started GET "/users" for ::1 at 2022-02-11 16:46:34 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 99ms (Views: 85.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/new" for ::1 at 2022-02-11 16:46:41 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 154ms (Views: 120.9ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/users" for ::1 at 2022-02-11 16:46:48 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"2MSdH7mhvY8/kefezrnNO6/FYFjCHtXK2i57sCdTNVUVKsaRL/4DNrMJ1WdqVgmHzuwp/Rmsxu0bXHN5aP/GwQ==", "user"=>{"username"=>"hey", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant User::BCrypt:
+  app/models/user.rb:18:in `password='
+  app/controllers/users_controller.rb:18:in `create'
+
+Started POST "/__better_errors/2eb42705a820609e/variables" for ::1 at 2022-02-11 16:46:48 -0800
+Started GET "/users" for ::1 at 2022-02-11 16:47:21 -0800
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:2
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 107ms (Views: 104.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2022-02-11 16:47:35 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2022-02-11 16:48:25 -0800
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 79ms (Views: 77.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2022-02-11 16:48:32 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"WMVVNyqsaSd6BDGsmJpMN5qyAgKg4Sh+Z0mXzf8rWt2VKw65vPPXnvacAxU8dYiL+5tLp3tTO1mmO58EsIepSQ==", "user"=>{"username"=>"hey", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - uninitialized constant User::BCrypt:
+  app/models/user.rb:18:in `password='
+  app/controllers/users_controller.rb:18:in `create'
+
+Started POST "/__better_errors/44c93b0561241147/variables" for ::1 at 2022-02-11 16:48:32 -0800
