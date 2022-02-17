@@ -68,7 +68,7 @@ Board.prototype.getPiece = function (pos) {
 
 /**
  * Checks if the piece at a given position
- * matches a given color.
+ * matches a given color. 
  */
 Board.prototype.isMine = function (pos, color) {
   if (this.getPiece(pos) === undefined) {
@@ -107,6 +107,34 @@ Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
   // check if piece opposite color
     // if opp color, add pos to piecesToFlip, make recursive call in direction
     // if same color, return piecesToFlip
+
+    if (!this.isValidPos(pos)) {
+      return [];
+    }
+    let first = false;
+    if (piecesToFlip === undefined) {
+      let first = true;
+      piecesToFlip = [];
+    }
+      if ((!this.isOccupied(pos)) && (!first)) {
+        return [];
+      }
+
+      if ((this.isMine(pos, color)) && (!first)) {
+        return piecesToFlip;
+      }
+      else {
+        pos[0] += dir[0];
+        pos[1] += dir[1];
+        piecesToFlip.push(pos);
+        // console.log(1);
+        return this._positionsToFlip(pos, color, dir, piecesToFlip);
+      }
+
+    
+    // return piecesToFlip;
+
+    // let piece = this.getPiece(pos)
 };
 
 /**
