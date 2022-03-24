@@ -10,3 +10,5 @@
 /public/assets
 .byebug_history
 /config/master.key
+/bundle.js
+/bundle.js.map
